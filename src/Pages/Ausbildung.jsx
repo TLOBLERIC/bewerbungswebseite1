@@ -17,7 +17,7 @@ export default function Ausbildung() {
             description:
                 "2014 wurde ich in die Kirchenfeld Schule am Lyssbach eingeschult.",
             icon: <FaSchool />,
-            image: "/src/images/kirchenfeld.jpg"
+            image: "/images/kirchenfeld.jpg"
         },
         {
             year: "2018 – 2020",
@@ -25,7 +25,7 @@ export default function Ausbildung() {
             description:
                 "2018 wechselte meine ganze Primarschulklasse in ein anderes Schulhaus, das Herrengasse Schulhaus in Lyss.",
             icon: <FaChalkboardTeacher />,
-            image: "/src/images/herrengasse.jpg"
+            image: "/images/herrengasse.jpg"
         },
         {
             year: "2020 – 2023",
@@ -33,7 +33,7 @@ export default function Ausbildung() {
             description:
                 "Zurück im Kirchenfeld Schulhaus, musste ich mich in einer neuen Klasse zurecht finden, dank meiner offenheit, ging dies einfacher als gedacht.",
             icon: <FaLaptopCode />,
-            image: "/src/images/kirchenfeld.jpg"
+            image: "/images/kirchenfeld.jpg"
         },
         {
             year: "2023 - Heute",
@@ -41,7 +41,7 @@ export default function Ausbildung() {
             description:
                 "Nach meiner Sekundarstufenzeit, wurde ich auf der BWD Bern als IMS Schüler aufgenommen, auf dieser Schule lernte ich neue Fächer kennen und konnte meine Sprachkenntnisse weiterentwickeln. ",
             icon: <FaUniversity />,
-            image: "/src/images/BWD.jpg"
+            image: "/images/BWD.jpg"
         },
         {
             year: "2023 - Heute",
@@ -49,7 +49,7 @@ export default function Ausbildung() {
             description:
                 "Neben der BWD, besuche ich die GIBB an der Lorrainestrasse in Bern, auf diesere Schule, durfte ich mein interesse an der Informatik, das erste mal richtig ausleben. ",
             icon: <FaGraduationCap />,
-            image: "/src/images/gibb.webp"
+            image: "/images/gibb.webp"
         }
     ];
 

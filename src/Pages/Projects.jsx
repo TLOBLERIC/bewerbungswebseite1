@@ -4,13 +4,13 @@ export default function Projects() {
     const projectList = [
         {
             title: "Pacman Game",
-            img: "/src/images/pacman.jpg",
+            img: "/images/pacman.jpg",
             desc:
                 "Mein eigenes Pacman Game, das ich für die Schule mit .Net erstellt habe. Hier habe ich meine ersten Erfahrungen mit C# und .Net gesammelt."
         },
         {
             title: "StundenplanApp",
-            img: "/src/images/stundenplan.png",
+            img: "/images/stundenplan.png",
             desc:
                 "Bei einem Projekt für die Gibb durften wir eine eigene App erstellen. Ich habe mich für eine Stundenplan-App für eine imaginäre Schule entschieden. Das Projekt habe ich mit .NET MAUI (Frontend) und SQLite (Backend) umgesetzt.",
             link: "https://github.com/TLOBLERIC/gibbstundenplan" // <- Ziel-URL
