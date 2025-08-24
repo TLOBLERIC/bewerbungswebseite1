@@ -8,7 +8,7 @@ import Projects from "./Pages/Projects";
 import Informatikkompetenzen from "./Pages/Informatikkompetenzen";
 import Noten from "./Pages/Noten";
 import Ausbildung from "./Pages/Ausbildung"; // NEU
-import Dokumente from "./Pages/Dokumente";
+import Dokumente from "./Pages/Dokumente.jsx";
 import Login from "./Pages/Login.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Footer from "./components/Footer";

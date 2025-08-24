@@ -1,5 +1,7 @@
+// src/Pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { API_BASE } from "../lib/apiBase"; // export const API_BASE = import.meta.env.VITE_API_BASE || "/api";
 
 export default function Login() {
     const [username, setUsername] = useState("");
@@ -13,16 +15,25 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:5000/login", {
+            const res = await fetch(`${API_BASE}/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, password }),
             });
+
             if (!res.ok) {
+                const txt = await res.text().catch(() => "");
+                console.error("Login fehlgeschlagen:", txt);
                 alert("❌ Falsche Login-Daten");
                 return;
             }
+
             const data = await res.json();
+            if (!data?.token) {
+                alert("⚠️ Unerwartete Antwort vom Server.");
+                return;
+            }
+
             localStorage.setItem("token", data.token);
             navigate(from, { replace: true });
         } catch (err) {
@@ -72,3 +83,4 @@ export default function Login() {
         </main>
     );
 }
+
