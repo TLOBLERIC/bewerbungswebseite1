@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 
 export default function Hero({
-                                 bg = "/public/image/hero.jpg",
+                                 bg = "/image/hero.jpg",             // <- Datei in public/image/hero.jpg
                                  title = "Loïc Tobler",
-                                 heroImage = "/public/images/image-6.jpg", // <— dein Bild hier
+                                 heroImage = "/images/image-6.jpg",  // <- Datei in public/images/image-6.jpg
                              }) {
     return (
         <header className="hero" style={{ backgroundImage: `url(${bg})` }}>
-            {/* Hintergrund-Overlay (liegt hinter allem im Vordergrund) */}
+            {/* Hintergrund-Overlay */}
             <div className="hero__overlay" />
 
             {/* Vordergrund-Inhalt */}
@@ -25,7 +25,6 @@ export default function Hero({
                 {/* Text im Vordergrund */}
                 <div className="hero__content">
                     <h1 className="hero__title">{title}</h1>
-
                 </div>
             </div>
 
@@ -35,4 +34,3 @@ export default function Hero({
         </header>
     );
 }
-
