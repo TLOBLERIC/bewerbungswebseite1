@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export default function UeberMich() {
-    // Lege die Dateien in public/images/ ab (gleich geschriebene Namen!)
-    const imageFiles = [
-        "Image (13).jpg",
-        "Image (11).jpg",
-        "Drake.jpg",
-    ];
 
-    const images = imageFiles.map((f) => `/images/${encodeURIComponent(f)}`);
+    const imageFiles = ["image-13.jpg","image-11.jpg","drake.jpg"];
+    const images = imageFiles.map(f => `/images/${f}`);
+
 
     const [frame, setFrame] = useState(0);
     const timerRef = useRef(null);
