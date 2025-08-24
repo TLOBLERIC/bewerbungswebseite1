@@ -5,7 +5,7 @@ export default function Hero({
                                  bg = "/images/hero.jpg",   // Hintergrundbild (z. B. Stadt, Tech-Muster)
                                  title = "Loïc Tobler",
                                  subtitle = "IT is it.",
-                                 heroImage = "/images/portrait.png", // dein freigestelltes Bild
+                                 heroImage = "/images/image-6.jpg", // dein freigestelltes Bild
                              }) {
     return (
         <header
@@ -28,7 +28,7 @@ export default function Hero({
                         <a href="#projects" className="btn btn-primary">
                             Projekte ansehen →
                         </a>
-                        <a href="#dokumente" className="btn btn-outline">
+                        <a href="#dokumente" className="btn btn-primary">
                             Dokumente
                         </a>
                     </div>
