@@ -2,9 +2,9 @@ import React from "react";
 import "./App.css";
 
 export default function Hero({
-                                 bg = "/src/image/hero.jpg",
+                                 bg = "/public/image/hero.jpg",
                                  title = "Loïc Tobler",
-                                 heroImage = "/src/images/image (6).jpg", // <— dein Bild hier
+                                 heroImage = "/public/images/image-6.jpg", // <— dein Bild hier
                              }) {
     return (
         <header className="hero" style={{ backgroundImage: `url(${bg})` }}>
