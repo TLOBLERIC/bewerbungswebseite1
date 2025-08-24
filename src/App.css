@@ -437,6 +437,7 @@ body {
   font-weight: 800;
   letter-spacing: .4px;
   text-shadow: 0 6px 22px rgba(0,0,0,.35);
+  color: #fff !important; /* <- ensured white title */
 }
 
 .hero__sub{
@@ -1532,13 +1533,7 @@ main.fullpage h2 {
 }
 /* ===== Responsive Navbar (kompatibel zu vorhandenen Styles) ===== */
 
-/* innere Leiste */
-.nav-inner{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  gap:12px !important;
-}
+
 
 /* Linkliste auf Desktop */
 .navbar .nav-links{
@@ -1724,7 +1719,6 @@ a.portfolio-card {
   object-fit: contain; /* nicht reinzoomen, sondern mit Balken */
 }
 
-/* Drehung, damit das Portrait horizontal erscheint */
 .um-video-element.rotated {
   transform: rotate(90deg);
   width: auto;
@@ -1746,15 +1740,12 @@ a.portfolio-card {
   top: 50%;
   left: 50%;
   transform-origin: center center;
-  /* Wir lassen das Objekt selbst die Fläche füllen */
   object-fit: cover;
 }
 
-/* WICHTIG: 90° nach LINKS drehen (überkopf war +90°) */
+/* 90° nach LINKS drehen */
 .um-video-el.rotate-left {
   transform: translate(-50%, -50%) rotate(-90deg);
-  /* Portrait → nach Rotation muss die Höhe skaliert werden,
-     damit 16:9 vollständig bedeckt ist */
   height: 180%;
   width: auto;
 }
@@ -1873,7 +1864,6 @@ html, body, #root { height: 100%; }
 .docs-viewport{
   width: 100%;
   min-height: calc(100vh - var(--nav-h) - var(--footer-h));
-  /* angenehme Innenabstände, wie bei deinen Sections */
   padding: clamp(16px, 2vw, 32px);
   display: flex;
 }
@@ -1951,3 +1941,58 @@ html, body, #root { height: 100%; }
   box-shadow: 0 10px 30px rgba(18, 43, 37, .08);
   padding: 1.25rem 1.25rem 1.5rem;
 }
+/* --- Layering/Fundament --- */
+.hero { position: relative; height: 100vh; width: 100%; background-size: cover; background-position: center; overflow: hidden; }
+.hero__overlay { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(1,22,30,.55) 0%, rgba(1,22,30,.25) 50%, rgba(1,22,30,.10) 85%);
+}
+.hero__inner { position: relative; z-index: 3; /* <<< Vordergrund */
+  height: 100%; display: grid; align-items: center;
+  grid-template-columns: minmax(260px, 260px) 1fr; gap: clamp(16px, 4vw, 40px);
+  padding: clamp(24px, 6vw, 64px) 20px;
+}
+
+/* --- Bild-Box im Vordergrund --- */
+.hero__profile-box {
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(0,0,0,.25);
+  padding: clamp(10px, 2vw, 16px);
+  display: grid; place-items: center;
+}
+.hero__profile-img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* --- Text im Vordergrund --- */
+.hero__content { color: #fff; text-align: left; }
+.hero__title {
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 1.05; margin: 0 0 10px 0; font-weight: 800;
+  text-shadow: 0 6px 22px rgba(0,0,0,.35);
+  color: #fff !important;
+}
+.hero__subtitle { font-size: clamp(16px, 2vw, 24px); opacity: .95; margin: 0; }
+
+/* Scroll-Indicator */
+.hero__scroll { position: absolute; z-index: 3; bottom: 24px; left: 50%; transform: translateX(-50%);
+  width: 40px; height: 40px; border-radius: 600px; display: grid; place-items: center;
+  background: rgba(255,255,255,.18); color: #fff; text-decoration: none; backdrop-filter: blur(4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.25); transition: transform .2s ease, background .2s ease;
+}
+.hero__scroll:hover { transform: translateX(-50%) translateY(-2px); background: rgba(255,255,255,.28); }
+
+/* --- Responsiv --- */
+@media (max-width: 900px){
+  .hero__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .hero__content { text-align: center; }
+  .hero__profile-box { max-width: min(70vw, 360px); }
+}
+.hero__inner { grid-template-columns: 1fr minmax(360px, 360px); }

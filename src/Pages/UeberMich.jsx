@@ -1,28 +1,39 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export default function UeberMich() {
-    const images = [
-
-        "/src/images/Image (8).jpg",
-        "/src/images/Image (11).jpg",
-        "/src/images/Drake.jpg"
+    // Lege die Dateien in public/images/ ab (gleich geschriebene Namen!)
+    const imageFiles = [
+        "Image (13).jpg",
+        "Image (11).jpg",
+        "Drake.jpg",
     ];
+
+    const images = imageFiles.map((f) => `/images/${encodeURIComponent(f)}`);
+
     const [frame, setFrame] = useState(0);
     const timerRef = useRef(null);
 
-    // Bildsequenz Hover
+    // Bildsequenz Hover/Touch
     const startSequence = () => {
         if (timerRef.current) return;
         timerRef.current = setInterval(() => {
             setFrame((f) => (f + 1) % images.length);
         }, 900);
     };
+
     const stopSequence = () => {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+            timerRef.current = null;
+        }
         setFrame(0);
     };
-    useEffect(() => () => clearInterval(timerRef.current), []);
+
+    useEffect(() => {
+        return () => {
+            if (timerRef.current) clearInterval(timerRef.current);
+        };
+    }, []);
 
     // Scroll-In Animation (wie bei Kompetenzen/Noten/Projects)
     useEffect(() => {
@@ -61,17 +72,21 @@ export default function UeberMich() {
                     <h1 className="um-intro-title">Hallo, ich bin Loic!</h1>
                     <div className="um-prose">
                         <p className="um-lead">
-                           Ich bin ein Mehrsprachig aufgewachsener, motivierender Informatiker, mit einer Doppelten Staatsbürgerschaft in Kanada und der Schweiz.
-                           Neben meinen hohen Kenntnissen in der Englischen, Deutscher und Französicher Sprache bringe ich einige Infromatikkenntnisse, die ich gerne Erweitern möchte, ein Selbstbeweusstes auftreten und einen aufregenden Charakter mit.
-                            Einige <strong>schwächen</strong> habe ich in der Selbstreflexion, die ich gerne mit einem Praktikum verbessern möchte.
+                            Ich bin ein mehrsprachig aufgewachsener, motivierter Informatiker mit
+                            doppelter Staatsbürgerschaft (Kanada & Schweiz). Neben sehr guten
+                            Kenntnissen in Englisch, Deutsch und Französisch bringe ich
+                            Informatik-Know-how, ein selbstbewusstes Auftreten und einen
+                            positiven Charakter mit. Einige <strong>Schwächen</strong> habe ich in der
+                            Selbstreflexion – die möchte ich in einem Praktikum gezielt verbessern.
                         </p>
                         <p>
-                            Geboren mit einer ordentlichen Portion Neugier, probiere ich gern neue
+                            Geboren mit einer ordentlichen Portion Neugier probiere ich gern neue
                             Tools, Frameworks und Konzepte aus. So finde ich schnell heraus, was in
                             der Praxis wirklich trägt – und was nur Buzzword ist.
                         </p>
                         <p>
-                           Im Team schätze ich klare Kommunikation, zusammenhalt, problemlösung und Spass.
+                            Im Team schätze ich klare Kommunikation, Zusammenhalt, Problemlösung
+                            und Spaß.
                         </p>
                     </div>
                 </div>
@@ -82,7 +97,9 @@ export default function UeberMich() {
                     style={{ "--delay": "260ms" }}
                     onMouseEnter={startSequence}
                     onMouseLeave={stopSequence}
-                    aria-label="Bildsequenz – bewegt sich beim Darüberfahren"
+                    onTouchStart={startSequence}
+                    onTouchEnd={stopSequence}
+                    aria-label="Bildsequenz – bewegt sich beim Darüberfahren/Antippen"
                 >
                     <div className="um-sequence">
                         {images.map((src, i) => (
@@ -114,18 +131,17 @@ export default function UeberMich() {
                     </p>
                 </div>
 
-                <div className="um-video um-video--landscape">
+                <div className="um-video um-video--landscape um-anim" style={{ "--delay": "420ms" }}>
+                    {/* Lege die Datei in public/videos/handballvideo.mp4 */}
                     <video
-                        src="/src/images/handballvideo.mp4"
+                        src="/videos/handballvideo.mp4"
                         controls
                         className="um-video-el rotate-left"
                         playsInline
                     />
                     <div className="um-video-badge">Highlights</div>
                 </div>
-
             </div>
-
         </section>
     );
 }
