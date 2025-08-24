@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:api": "nodemon --watch api api/server.js",
+    "dev:full": "concurrently -n WEB,API -c auto \"vite\" \"nodemon --watch api api/server.js\""
   },
   "dependencies": {
     "chart.js": "^4.5.0",
@@ -17,7 +18,16 @@
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.8.0"
+    "react-router-dom": "^7.8.0",
+
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^6.11.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
@@ -28,6 +38,9 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.10"
   }
 }
