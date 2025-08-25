@@ -1,8 +1,7 @@
-// api/health.js
-export const config = { runtime: "nodejs18.x" };
+// /api/health.js
+import { withCors } from "./_auth.js";
 
-export default async function handler(req) {
-    return new Response(JSON.stringify({ ok: true, env: process.env.NODE_ENV || "dev" }), {
-        headers: { "Content-Type": "application/json" },
-    });
-}
+export default withCors(async function handler(req, res) {
+    res.status(200).json({ ok: true, env: process.env.NODE_ENV || "dev" });
+});
+

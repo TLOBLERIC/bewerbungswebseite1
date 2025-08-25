@@ -1,2 +1,6 @@
 // src/lib/apiBase.js
-export const API_BASE = import.meta.env.VITE_API_BASE || "/api";
+const apiBase =
+    import.meta.env.MODE === "development"
+        ? "http://localhost:5000" // nur lokal, falls du lokal testen willst
+        : "";                      // auf Vercel/Domain relativ -> /api/...
+export default apiBase;
