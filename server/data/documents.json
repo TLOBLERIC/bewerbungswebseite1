@@ -1,0 +1,9 @@
+[
+  { "id": "lebenslauf", "name": "Loic Tobler Lebenslauf", "filename": "LoicToblerLebenslauf.pdf", "contentType": "application/pdf" },
+  { "id": "gibb-zeugnis", "name": "GiBB Zeugnis", "filename": "IM23A_Tobler_Loic_Zeugnis_Berufsschule_Semester_6.pdf", "contentType": "application/pdf" },
+  { "id": "uek-106", "name": "ÜK 106 Zeugnis", "filename": "KNW106_Tobler_Loic.pdf", "contentType": "application/pdf" },
+  { "id": "uek-187", "name": "ÜK 187 Zeugnis", "filename": "KNW187_Tobler_Loic.pdf", "contentType": "application/pdf" },
+  { "id": "uek-294", "name": "ÜK 294 Zeugnis", "filename": "KNW294_Tobler_Loic.pdf", "contentType": "application/pdf" },
+  { "id": "uek-295", "name": "ÜK 295 Zeugnis", "filename": "KNW295_Tobler_Loic.pdf", "contentType": "application/pdf" },
+  { "id": "uek-210", "name": "ÜK 210 Zeugnis", "filename": "KNW210_Tobler_Loic.pdf", "contentType": "application/pdf" },
+]

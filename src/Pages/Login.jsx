@@ -1,7 +1,6 @@
 // src/Pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { API_BASE } from "../lib/apiBase"; // export const API_BASE = import.meta.env.VITE_API_BASE || "/api";
 
 export default function Login() {
     const [username, setUsername] = useState("");
@@ -15,7 +14,7 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${API_BASE}/login`, {
+            const res = await fetch(`/api/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, password }),
@@ -83,4 +82,3 @@ export default function Login() {
         </main>
     );
 }
-
