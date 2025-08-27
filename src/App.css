@@ -2286,3 +2286,45 @@ a, button {
 
 /* Keyframe (namespaced) */
 @keyframes prj-float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+/* ===== Full-bleed / Fullheight Fix ===== */
+
+/* niemals horizontales Scrollen */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* any global wrapper that centers content – darf die Breite nicht limitieren */
+.app, .page, .layout, .shell, main {
+  width: 100%;
+  max-width: none;    /* killt 1200px/1440px Deckel */
+}
+
+/* Sections sollen die volle Viewport-Breite nutzen */
+.section,
+.hero {
+  width: 100vw;                     /* volle Breite */
+  margin: 0;                        /* kein zentriertes Auto-Margin */
+  padding-left: clamp(16px,3vw,32px);
+  padding-right: clamp(16px,3vw,32px);
+}
+
+/* Hero wirklich „fullscreen“ */
+.hero {
+  min-height: 100svh;               /* screenhöhe, safe für mobile Toolbars */
+  display: grid;
+  align-items: center;              /* vertikal zentrieren */
+  /* Falls dein Hero-Hintergrund auf dem <header class="hero"> liegt: */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;                 /* keine abgerundeten Ecken an Kanten */
+}
+
+/* Nur der Inhalt im Hero darf begrenzt sein, nicht der Hintergrund */
+.hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
