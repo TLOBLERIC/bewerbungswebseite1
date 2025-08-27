@@ -23,9 +23,17 @@ export default function Projects() {
         },
         {
             title: "Webseite für meinen Handball Verein",
-            img: "",
+            img: "/images/handballseite.png",
             desc:
-                "Auch wenn es nicht zur offiziellen Website meines Handballvereins ausgewählt wurde, konnte ich dadurch einige Erfahrungen mit HTML, CSS und Templates sammeln."
+                "Auch wenn es nicht zur offiziellen Website meines Handballvereins ausgewählt wurde, konnte ich dadurch einige Erfahrungen mit HTML, CSS und Templates sammeln.",
+            link: "https://inf-293-23f-m293user18.iet-gibb.net/Teil2/index.html"
+        },
+        {
+            title: "Bewerbungswebsite Grundidee",
+            img:"/images/bewerbungswebseite.png",
+            desc:
+            "Eine weitere Webseite, die ich für ein GIBB Projekt erstellt habe, hierbei habe ich mich für eine Grundidee meiner Bewerbungswebseite entschieden. Das ganze Projekt wurde mit HTML und CSS erstellt.",
+            link: "https://inf-293-23f-m293user18.iet-gibb.net/Teil3/index.html#"
         }
     ];
 
