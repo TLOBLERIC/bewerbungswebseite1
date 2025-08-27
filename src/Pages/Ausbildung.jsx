@@ -47,7 +47,7 @@ export default function Ausbildung() {
             year: "2023 - Heute",
             title: "GIBB ",
             description:
-                "Neben der BWD, besuche ich die GIBB an der Lorrainestrasse in Bern, auf diesere Schule, durfte ich mein interesse an der Informatik, das erste mal richtig ausleben. ",
+                "Neben der BWD, besuche ich die GIBB an der Lorrainestrasse in Bern, auf dieser Schule, durfte ich mein interesse an der Informatik, das erste mal richtig ausleben. ",
             icon: <FaGraduationCap />,
             image: "/images/gibb.webp"
         }

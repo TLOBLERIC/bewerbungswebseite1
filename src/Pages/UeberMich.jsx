@@ -120,6 +120,8 @@ export default function UeberMich() {
                         Handball ist für mich Tempo, Teamgeist und Timing. Auf dem Feld trainiere ich
                         Fokus, Kommunikation und Antizipation – Skills, die auch in Projekten wertvoll sind:
                         <em> klare Absprachen, saubere Spielzüge (Architektur) und gutes Timing</em>.
+                        Gestartet als 4 Jähriger beim PSG Lyss bei den Minis, bis jetzt als 17 Jähriger in der 1. Mannschaft und in der u 19, weiterhin beim PSG Lyss.
+                        Zum Handball spielen kam ich durch meine Familie, schon mein Grossvater, spielte damals Handball(Feldhandball). Mein Vater und mein Bruder machten es ihm gleich nach, zurzeit spielt mein Bruder bei Ottmar St.Gallen in der höchsten Liga der Schweiz.
                     </p>
                     <p>
                         Ich spiele meist im Rückraum, arbeite gern an taktischen Abläufen und liebe es, wenn
