@@ -145,7 +145,7 @@ export default function UeberMich() {
                     <div className="um-video-card um-portrait">
                         <video
                             className="um-video"
-                            src="/videos/handballvideo.mp4"
+                            src="/videos/handballvideo2.mp4"
                             controls
                             playsInline
                             preload="metadata"

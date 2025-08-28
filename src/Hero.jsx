@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";          // ✅ neu
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
 
@@ -26,14 +27,15 @@ export default function Hero({
                         Frontend Developer • Tech-Enthusiast • Teamplayer
                     </p>
 
-                    {/* Buttons */}
                     <div className="hero__buttons">
                         <a href="#projects" className="btn btn-primary">
                             Projekte ansehen →
                         </a>
-                        <a href="#dokumente" className="btn btn-primary">
+
+                        {/* ✅ Dokumente: echte Route statt Hash-Link */}
+                        <Link to="/dokumente" className="btn btn-primary">
                             Dokumente
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Social Links */}
@@ -83,3 +85,4 @@ export default function Hero({
         </header>
     );
 }
+
