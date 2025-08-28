@@ -1,18 +1,15 @@
 import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
 
 export default function Hero({
-                                 bg = "/images/hero.jpg",   // Hintergrundbild (z. B. Stadt, Tech-Muster)
+                                 bg = "/images/hero.jpg",
                                  title = "Loïc Tobler",
                                  subtitle = "IT is it.",
-                                 heroImage = "/images/image-6.jpg", // dein freigestelltes Bild
+                                 heroImage = "/images/image-6.jpg",
                              }) {
     return (
-        <header
-            className="hero"
-            style={{ backgroundImage: `url(${bg})` }}
-        >
-            {/* Overlay mit Gradient */}
+        <header className="hero" style={{ backgroundImage: `url(${bg})` }}>
             <div className="hero__overlay-gradient" />
 
             <div className="hero__inner container">
@@ -24,6 +21,12 @@ export default function Hero({
                     </h1>
                     <p className="hero__subtitle">{subtitle}</p>
 
+                    {/* Elevator Pitch */}
+                    <p className="hero__tagline">
+                        Frontend Developer • Tech-Enthusiast • Teamplayer
+                    </p>
+
+                    {/* Buttons */}
                     <div className="hero__buttons">
                         <a href="#projects" className="btn btn-primary">
                             Projekte ansehen →
@@ -32,9 +35,38 @@ export default function Hero({
                             Dokumente
                         </a>
                     </div>
+
+                    {/* Social Links */}
+                    <div className="hero__socials">
+                        <a href="https://github.com/" target="_blank" rel="noreferrer">
+                            <FaGithub />
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+                            <FaLinkedin />
+                        </a>
+                        <a href="mailto:mail@domain.com">
+                            <FaEnvelope />
+                        </a>
+                    </div>
+
+                    {/* Quick Facts */}
+                    <div className="hero__facts">
+                        <div className="fact">
+                            <span className="fact-num">5+</span>
+                            <span className="fact-label">Projekte</span>
+                        </div>
+                        <div className="fact">
+                            <span className="fact-num">DE/EN/FR</span>
+                            <span className="fact-label">Sprachen</span>
+                        </div>
+                        <div className="fact">
+                            <span className="fact-num">100%</span>
+                            <span className="fact-label">Motivation</span>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Profilbild im Vordergrund */}
+                {/* Profilbild */}
                 <div className="hero__profile-box">
                     <img
                         src={heroImage}
