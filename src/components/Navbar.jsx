@@ -1,50 +1,108 @@
-// src/components/Navbar.jsx
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../App.css";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [active, setActive] = useState("#ueber-mich");
+    const location = useLocation();
+
+    // Scroll-Shadow
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 6);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    // Aktiven Link bestimmen (Hash/Route)
+    useEffect(() => {
+        const setFromHash = () => {
+            const h = window.location.hash || "#ueber-mich";
+            setActive(h);
+        };
+        setFromHash();
+        window.addEventListener("hashchange", setFromHash);
+        return () => window.removeEventListener("hashchange", setFromHash);
+    }, [location.pathname]);
+
     const closeMobile = () => setOpen(false);
 
+    const NavA = ({ href, children }) => (
+        <a
+            className={`nav-link ${active === href ? "is-active" : ""}`}
+            href={href}
+            onClick={closeMobile}
+        >
+            <span>{children}</span>
+            <i aria-hidden="true" />
+        </a>
+    );
+
+    const NavLinkRoute = ({ to, children }) => (
+        <Link
+            className={`nav-link route ${location.pathname === to ? "is-active" : ""}`}
+            to={to}
+            onClick={closeMobile}
+        >
+            <span>{children}</span>
+            <i aria-hidden="true" />
+        </Link>
+    );
+
     return (
-        <nav className="navbar">
-            <div className="container inner nav-inner">
-                {/* Logo -> Home */}
-                <h1 className="logo">
-                    <a href="/#ueber-mich" onClick={closeMobile}>Loïc Tobler</a>
-                </h1>
+        <header className={`nav-wrap ${scrolled ? "is-scrolled" : ""}`}>
+            <nav className="navbar-pro">
+                {/* Logo */}
+                <a className="brand" href="/#ueber-mich" onClick={closeMobile} aria-label="Start">
+                    <div className="brand-mark" aria-hidden="true">LT</div>
+                    <div className="brand-text">
+                        <strong>Loïc</strong> Tobler
+                    </div>
+                </a>
+
+                {/* Desktop Links */}
+                <ul className="nav-list">
+                    <li><NavA href="/#ueber-mich">Über mich</NavA></li>
+                    <li><NavA href="/#projects">Projects</NavA></li>
+                    <li><NavA href="/#kompetenzen">Informatikkompetenzen</NavA></li>
+                    <li><NavA href="/#noten">Noten</NavA></li>
+                    <li className="divider" aria-hidden="true" />
+                    <li><NavLinkRoute to="/dokumente">Dokumente</NavLinkRoute></li>
+                </ul>
 
                 {/* Burger */}
                 <button
-                    className={`nav-burger ${open ? "is-open" : ""}`}
+                    className={`burger ${open ? "is-open" : ""}`}
                     onClick={() => setOpen(v => !v)}
                     aria-label="Menü umschalten"
                     aria-expanded={open}
-                    aria-controls="nav-links"
+                    aria-controls="mobile-drawer"
                     type="button"
                 >
-                    <span />
-                    <span />
-                    <span />
+                    <span /><span /><span />
                 </button>
 
-                {/* Links */}
-                <ul id="nav-links" className={`nav-links ${open ? "open" : ""}`}>
-                    {/* Startseite-Sektionen als native Anker */}
-                    <li><a className="nav-box" href="/#ueber-mich" onClick={closeMobile}>Über mich</a></li>
-                    <li><a className="nav-box" href="/#projects" onClick={closeMobile}>Projects</a></li>
-                    <li><a className="nav-box" href="/#kompetenzen" onClick={closeMobile}>Informatikkompetenzen</a></li>
-                    <li><a className="nav-box" href="/#noten" onClick={closeMobile}>Noten</a></li>
+                {/* Mobile Drawer */}
+                <div id="mobile-drawer" className={`drawer ${open ? "open" : ""}`}>
+                    <div className="drawer-inner">
+                        <NavA href="/#ueber-mich">Über mich</NavA>
+                        <NavA href="/#projects">Projects</NavA>
+                        <NavA href="/#kompetenzen">Informatikkompetenzen</NavA>
+                        <NavA href="/#noten">Noten</NavA>
+                        <NavLinkRoute to="/dokumente">Dokumente</NavLinkRoute>
+                    </div>
+                </div>
 
-                    {/* Unterseite als echte Route -> Link verwenden */}
-                    <li>
-                        <Link className="nav-box" to="/dokumente" onClick={closeMobile}>
-                            Dokumente
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                {/* Backdrop für Drawer */}
+                <button
+                    className={`backdrop ${open ? "show" : ""}`}
+                    onClick={closeMobile}
+                    aria-label="Menü schließen"
+                />
+            </nav>
+        </header>
     );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 export default function UeberMich() {
     // Bilder im /public/images ablegen
-    const imageFiles = ["image-13.jpg", "image-11.jpg", "drake.jpg"];
+    const imageFiles = ["handballimage.jpg", "image-11.jpg", "drake.jpg"];
     const images = imageFiles.map((f) => `/images/${f}`);
 
     const [frame, setFrame] = useState(0);
