@@ -8,7 +8,9 @@ export default function Projects() {
             desc: ".NET MAUI (Frontend) + SQLite (Backend).",
             link: "https://github.com/TLOBLERIC/gibbstundenplan", cta: "GitHub" },
         { title: "Haushaltsplanungsapp", img: "/images/household.jpg",
-            desc: "Gruppenprojekt: Aufgaben, Wochenansicht & Benachrichtigungen." },
+            desc: "Gruppenprojekt: Aufgaben, Wochenansicht & Benachrichtigungen.",
+            link: "https://git.gibb.ch/mae149406/haushaltsplaner", cta: "GitHub"},
+
         { title: "Webseite für meinen Handball Verein", img: "/images/handballseite.png",
             desc: "Eigenes HTML/CSS-Projekt.", link: "https://inf-293-23f-m293user18.iet-gibb.net/Teil2/index.html", cta: "Website" },
         { title: "Bewerbungswebsite – Grundidee", img: "/images/bewerbungswebseite.png",
@@ -34,7 +36,7 @@ export default function Projects() {
             <div className="prj-hero prj-reveal" style={{ "--delay": "0ms" }}>
                 <span className="prj-badge">Portfolio</span>
                 <h2 className="prj-headline">Projects</h2>
-                <p className="prj-subline">Eine Auswahl aktueller Arbeiten.</p>
+                <p className="prj-subline">Vergangene Projekte.</p>
                 <div className="prj-shine" aria-hidden="true" />
             </div>
 

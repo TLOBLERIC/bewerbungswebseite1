@@ -1,15 +1,16 @@
 // src/Pages/Ausbildung.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import {
     FaSchool,
     FaLaptopCode,
     FaGraduationCap,
     FaUniversity,
-    FaChalkboardTeacher
+    FaChalkboardTeacher,
 } from "react-icons/fa";
 import "../App.css";
 
 export default function Ausbildung() {
+    // Daten – unverändert, aber wir markieren "aktuell"
     const timeline = [
         {
             year: "2014 – 2018",
@@ -17,7 +18,7 @@ export default function Ausbildung() {
             description:
                 "2014 wurde ich in die Kirchenfeld Schule am Lyssbach eingeschult.",
             icon: <FaSchool />,
-            image: "/images/kirchenfeld.jpg"
+            image: "/images/kirchenfeld.jpg",
         },
         {
             year: "2018 – 2020",
@@ -25,42 +26,48 @@ export default function Ausbildung() {
             description:
                 "2018 wechselte meine ganze Primarschulklasse in ein anderes Schulhaus, das Herrengasse Schulhaus in Lyss.",
             icon: <FaChalkboardTeacher />,
-            image: "/images/herrengasse.jpg"
+            image: "/images/herrengasse.jpg",
         },
         {
             year: "2020 – 2023",
             title: "Sekundarschule",
             description:
-                "Zurück im Kirchenfeld Schulhaus, musste ich mich in einer neuen Klasse zurecht finden, dank meiner offenheit, ging dies einfacher als gedacht.",
+                "Zurück im Kirchenfeld Schulhaus, musste ich mich in einer neuen Klasse zurecht finden, dank meiner Offenheit ging dies einfacher als gedacht.",
             icon: <FaLaptopCode />,
-            image: "/images/kirchenfeld.jpg"
+            image: "/images/kirchenfeld.jpg",
         },
         {
-            year: "2023 - Heute",
+            year: "2023 – Heute",
             title: "BWD Bern",
             description:
-                "Nach meiner Sekundarstufenzeit, wurde ich auf der BWD Bern als IMS Schüler aufgenommen, auf dieser Schule lernte ich neue Fächer kennen und konnte meine Sprachkenntnisse weiterentwickeln. ",
+                "Nach meiner Sekundarstufenzeit wurde ich auf der BWD Bern als IMS-Schüler aufgenommen. Dort lernte ich neue Fächer kennen und konnte meine Sprachkenntnisse weiterentwickeln.",
             icon: <FaUniversity />,
-            image: "/images/BWD.jpg"
+            image: "/images/BWD.jpg",
+            current: true, // ✅ aktuell
         },
         {
-            year: "2023 - Heute",
-            title: "GIBB ",
+            year: "2023 – Heute",
+            title: "GIBB",
             description:
-                "Neben der BWD, besuche ich die GIBB an der Lorrainestrasse in Bern, auf dieser Schule, durfte ich mein interesse an der Informatik, das erste mal richtig ausleben. ",
+                "Neben der BWD besuche ich die GIBB an der Lorrainestrasse in Bern. Hier konnte ich mein Interesse an der Informatik zum ersten Mal richtig ausleben.",
             icon: <FaGraduationCap />,
-            image: "/images/gibb.webp"
-        }
+            image: "/images/gibb.webp",
+            current: true, // ✅ aktuell
+        },
     ];
 
-    // EXAKT wie bei Projects / Über mich: Observer, .in-view, --delay
+    // Neu: aktuell(e) Station(en) zuerst
+    const items = useMemo(() => {
+        const cur = timeline.filter((t) => t.current);
+        const past = timeline.filter((t) => !t.current).reverse(); // neueste zuerst
+        return [...cur, ...past];
+    }, [timeline]);
+
+    // Scroll-Reveal (staggered)
     useEffect(() => {
         const nodes = Array.from(
-            document.querySelectorAll(
-                ".ausbildung .ausb-anim, .ausbildung .timeline-item"
-            )
+            document.querySelectorAll(".edu .tl-anim, .edu .tl-item")
         );
-
         const io = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -82,29 +89,58 @@ export default function Ausbildung() {
     }, []);
 
     return (
-        <section className="section ausbildung">
-            <div className="projects-hero ausb-anim" style={{ "--delay": "0ms" }}>
-                <h1 className="projects-title">Meine Ausbildung</h1>
-                <div className="section-line section-line-tight"></div>
+        <section className="section edu">
+            {/* Hero / Heading */}
+            <div className="edu-hero tl-anim" style={{ "--delay": "0ms" }}>
+                <h1 className="edu-title">Meine Ausbildung</h1>
+                <p className="edu-sub">
+                    Von heute zurück in die Vergangenheit – Stationen, die mich geprägt
+                    haben.
+                </p>
+                <div className="edu-line" aria-hidden />
             </div>
 
-            <div className="timeline">
-                {timeline.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-                        style={{ "--delay": `${(index + 1) * 120}ms` }}
+            {/* Timeline */}
+            <div className="tl">
+                <div className="tl-line" aria-hidden />
+                {items.map((item, i) => (
+                    <article
+                        key={`${item.title}-${i}`}
+                        className={`tl-item tl-anim ${item.current ? "is-current" : ""} ${
+                            i % 2 ? "right" : "left"
+                        }`}
+                        style={{ "--delay": `${(i + 1) * 120}ms` }}
                     >
-                        <div className="timeline-icon">{item.icon}</div>
-                        <div className="timeline-content">
-                            <span className="timeline-year">{item.year}</span>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                            <img src={item.image} alt={item.title} />
+                        {/* Node */}
+                        <div className="tl-node" aria-hidden>
+                            <span className="tl-node-inner">{item.icon}</span>
                         </div>
-                    </div>
+
+                        {/* Card */}
+                        <div className="tl-card">
+                            <header className="tl-meta">
+                                <span className="tl-year">{item.year}</span>
+                                {item.current && <span className="tl-badge">Aktuell</span>}
+                            </header>
+
+                            <h3 className="tl-title">{item.title}</h3>
+                            <p className="tl-desc">{item.description}</p>
+
+                            {item.image && (
+                                <div className="tl-media hover-tilt">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </article>
                 ))}
             </div>
         </section>
     );
 }
+

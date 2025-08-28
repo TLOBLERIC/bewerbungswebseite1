@@ -6,7 +6,7 @@ import "./App.css";
 export default function Hero({
                                  bg = "/images/hero.jpg",
                                  title = "Loïc Tobler",
-                                 subtitle = "IT is it.",
+                                 subtitle = "Keep calm and call IT.",
                                  heroImage = "/images/image-6.jpg",
                              }) {
     return (
@@ -24,7 +24,7 @@ export default function Hero({
 
                     {/* Elevator Pitch */}
                     <p className="hero__tagline">
-                        Frontend Developer • Tech-Enthusiast • Teamplayer
+                        Application Developer • Tech-Enthusiast • Teamplayer
                     </p>
 
                     <div className="hero__buttons">

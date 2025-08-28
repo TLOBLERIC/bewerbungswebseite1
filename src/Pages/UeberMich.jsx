@@ -71,22 +71,22 @@ export default function UeberMich() {
                     <h3 className="um-intro">Hallo, ich bin Loïc!</h3>
                     <div className="um-prose">
                         <p className="um-lead">
-                            Ich bin ein mehrsprachig aufgewachsener, motivierter
-                            Informatiker mit doppelter Staatsbürgerschaft (Kanada &amp;
-                            Schweiz). Neben sehr guten Kenntnissen in Englisch, Deutsch und
-                            Französisch bringe ich Informatik-Know-how, ein selbstbewusstes
-                            Auftreten und einen positiven Charakter mit. Einige{" "}
-                            <strong>Schwächen</strong> habe ich in der Selbstreflexion – die
-                            möchte ich in einem Praktikum gezielt verbessern.
+                            Ich bin ein mehr­spra­chig auf­ge­wach­se­ner, mo­ti­vier­ter
+                            In­for­ma­ti­ker mit dop­pel­ter Staats­bür­ger­schaft (Ka­na­da &
+                            Schweiz). Ne­ben sehr gu­ten Kennt­nis­sen in Eng­lisch, Deutsch und
+                            Fran­zö­sisch brin­ge ich In­for­ma­tik-Know-how, ein selbst­be­wuss­tes
+                            Auf­tre­ten und ei­nen po­si­ti­ven Cha­rak­ter mit. Ei­ni­ge
+                            <strong>Schwä­chen</strong> ha­be ich in der Selbst­re­fle­xi­on – die
+                            möch­te ich in ei­nem Prak­ti­kum ge­zielt ver­bes­sern.
                         </p>
                         <p>
-                            Geboren mit einer ordentlichen Portion Neugier probiere ich gern
-                            neue Tools, Frameworks und Konzepte aus. So finde ich schnell
-                            heraus, was in der Praxis wirklich trägt – und was nur Buzzword
+                            Ge­bo­ren mit ei­ner or­dent­li­chen Por­ti­on Neu­gier pro­bie­re ich gern
+                            neue Tools, Frame­works und Kon­zep­te aus. So fin­de ich schnell
+                            her­aus, was in der Pra­xis wirk­lich trägt – und was nur Buzz­word
                             ist.
                         </p>
-                        <p>Im Team schätze ich klare Kommunikation, Zusammenhalt,
-                            Problemlösung und Spaß.</p>
+                        <p>Im Team schät­ze ich kla­re Kom­mu­ni­ka­ti­on, Zu­sam­men­halt,
+                            Pro­blem­lö­sung und Spaß.</p>
                     </div>
 
                     {/* kleine Badges */}
@@ -129,15 +129,18 @@ export default function UeberMich() {
                 <article className="um-col um-anim" style={{ "--delay": "140ms" }}>
                     <h3 className="um-section-h3">Hobby: Handball</h3>
                     <p>
-                        Handball ist für mich Tempo, Teamgeist und Timing. Auf dem Feld
-                        trainiere ich Fokus, Kommunikation und Antizipation – Skills, die
-                        auch in Projekten wertvoll sind: <em>klare Absprachen, saubere
-                        Spielzüge (Architektur) und gutes Timing</em>. Gestartet als
-                        4-Jähriger beim PSG Lyss, heute in der 1. Mannschaft und U19.
+                        Hand­ball ist für mich Tem­po, Team­geist und Ti­ming. Auf dem Feld
+                        trai­nie­re ich Fo­kus, Kom­mu­ni­ka­ti­on und An­ti­zi­pa­ti­on – Skills, die
+                        auch in Pro­jek­ten wert­voll sind: <em>kla­re Ab­spra­chen, sau­be­re
+                        Spiel­zü­ge (Ar­chi­tek­tur) und gu­tes Ti­ming</em>. Ge­star­tet als
+                        4-Jäh­ri­ger beim PSG Lyss, heu­te in der 1. Mann­schaft und U19.
+                        Mein äl­te­rer Bru­der spielt eben­falls Hand­ball, je­doch bei Ott­mar
+                        St. Gal­len in der höchs­ten Li­ga der Schweiz; zu­dem ist er selbst auch
+                        ein aus­ge­bil­de­ter In­for­ma­ti­ker.
                     </p>
                     <p>
-                        Ich spiele meist im Rückraum, arbeite gern an taktischen Abläufen
-                        und liebe es, wenn ein Spielzug aufgeht wie geplant.
+                        Ich spie­le meist im Rück­raum, ar­bei­te gern an tak­ti­schen Ab­läu­fen
+                        und lie­be es, wenn ein Spiel­zug auf­geht wie ge­plant.
                     </p>
                 </article>
 
