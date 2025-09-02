@@ -75,7 +75,7 @@ export default function UeberMich() {
                             In­for­ma­ti­ker mit dop­pel­ter Staats­bür­ger­schaft (Ka­na­da &
                             Schweiz). Ne­ben sehr gu­ten Kennt­nis­sen in Eng­lisch, Deutsch und
                             Fran­zö­sisch brin­ge ich In­for­ma­tik-Know-how, ein selbst­be­wuss­tes
-                            Auf­tre­ten und ei­nen po­si­ti­ven Cha­rak­ter mit. Ei­ni­ge
+                            Auf­tre­ten und ei­nen po­si­ti­ven Cha­rak­ter mit. Ei­ni­ge­
                             <strong>Schwä­chen</strong> ha­be ich in der Selbst­re­fle­xi­on – die
                             möch­te ich in ei­nem Prak­ti­kum ge­zielt ver­bes­sern.
                         </p>
@@ -134,7 +134,7 @@ export default function UeberMich() {
                         auch in Pro­jek­ten wert­voll sind: <em>kla­re Ab­spra­chen, sau­be­re
                         Spiel­zü­ge (Ar­chi­tek­tur) und gu­tes Ti­ming</em>. Ge­star­tet als
                         4-Jäh­ri­ger beim PSG Lyss, heu­te in der 1. Mann­schaft und U19.
-                        Mein äl­te­rer Bru­der spielt eben­falls Hand­ball, je­doch bei Ott­mar
+                        Mein äl­te­rer Bru­der spielt eben­falls Hand­ball, je­doch bei TSV St.­Ott­mar
                         St. Gal­len in der höchs­ten Li­ga der Schweiz; zu­dem ist er selbst auch
                         ein aus­ge­bil­de­ter In­for­ma­ti­ker.
                     </p>

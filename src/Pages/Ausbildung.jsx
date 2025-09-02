@@ -32,7 +32,7 @@ export default function Ausbildung() {
             year: "2020 – 2023",
             title: "Sekundarschule",
             description:
-                "Zurück im Kirchenfeld Schulhaus, musste ich mich in einer neuen Klasse zurecht finden, dank meiner Offenheit ging dies einfacher als gedacht.",
+                "Umzug in eine neue Klasse. Ich musste mich mit neuen Schulkameraden zurechtfinden, dank meiner Offenheit ging dies einfacher als gedacht.",
             icon: <FaLaptopCode />,
             image: "/images/kirchenfeld.jpg",
         },
@@ -40,7 +40,7 @@ export default function Ausbildung() {
             year: "2023 – Heute",
             title: "BWD Bern",
             description:
-                "Nach meiner Sekundarstufenzeit wurde ich auf der BWD Bern als IMS-Schüler aufgenommen. Dort lernte ich neue Fächer kennen und konnte meine Sprachkenntnisse weiterentwickeln.",
+                "Nach meiner Sekundarstufenzeit wurde ich an der BWD Bern als IMS-Schüler aufgenommen. Dort lernte ich neue Fächer kennen und konnte meine Sprachkenntnisse weiterentwickeln.",
             icon: <FaUniversity />,
             image: "/images/BWD.jpg",
             current: true, // ✅ aktuell

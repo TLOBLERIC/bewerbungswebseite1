@@ -38,20 +38,21 @@ export default function Hero({
                         </Link>
                     </div>
 
-                    {/* Social Links */}
+
                     <div className="hero__socials">
-                        <a href="https://github.com/" target="_blank" rel="noreferrer">
+                        <a href="https://github.com/TLOBLERIC" target="_blank" rel="noreferrer">
                             <FaGithub />
+
                         </a>
                         <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
                             <FaLinkedin />
                         </a>
-                        <a href="mailto:mail@domain.com">
+                        <a href="tobler.loic@tutamail.com">
                             <FaEnvelope />
                         </a>
                     </div>
 
-                    {/* Quick Facts */}
+
                     <div className="hero__facts">
                         <div className="fact">
                             <span className="fact-num">5+</span>
