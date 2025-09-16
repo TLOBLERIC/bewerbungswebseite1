@@ -7,9 +7,9 @@ export default function Projects() {
         { title: "StundenplanApp", img: "/images/stundenplan.png",
             desc: ".NET MAUI (Frontend) + SQLite (Backend).",
             link: "https://github.com/TLOBLERIC/gibbstundenplan", cta: "GitHub" },
-        { title: "Haushaltsplanungsapp", img: "/images/household.jpg",
+        { title: "Haushaltsplanungsapp", img: "/images/haushaalt.png",
             desc: "Gruppenprojekt: Aufgaben, Wochenansicht & Benachrichtigungen.",
-            link: "https://git.gibb.ch/mae149406/haushaltsplaner", cta: "GitHub"},
+            link: "https://github.com/TLOBLERIC/Haushaltsplaner", cta: "GitHub"},
 
         { title: "Webseite für meinen Handball Verein", img: "/images/handballseite.png",
             desc: "Eigenes HTML/CSS-Projekt.", link: "https://inf-293-23f-m293user18.iet-gibb.net/Teil2/index.html", cta: "Website" },

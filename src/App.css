@@ -2809,3 +2809,116 @@ html, body, #root {
 /* Reveal helper */
 .tl-anim{ opacity:0; transform: translateY(14px); }
 .tl-anim.in-view{ opacity:1; transform:none; transition: transform .6s cubic-bezier(.2,.6,.2,1), opacity .6s ease; transition-delay: var(--delay,0ms); }
+/* ===== Impressum Modal (Footer) ===== */
+
+.impressum-btn{
+  padding: .6rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(7,27,47,.15);
+  background: #fff;
+  color:#0b223b;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.impressum-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(7,27,47,.12);
+  border-color: rgba(7,27,47,.25);
+}
+
+/* Overlay */
+.imp-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(15,23,42,.55);
+  backdrop-filter: blur(6px);
+  animation: imp-fade .25s ease-out;
+}
+@keyframes imp-fade{
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+/* Dialog */
+.imp-dialog{
+  width: min(640px, 92vw);
+  border-radius: 18px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(8,26,37,.08);
+  box-shadow: 0 22px 60px rgba(7,27,47,.25);
+  padding: clamp(16px, 3.2vw, 24px);
+  position: relative;
+  animation: imp-pop .22s cubic-bezier(.2,.7,.2,1);
+  outline: none;
+}
+@keyframes imp-pop{
+  from { transform: translateY(6px) scale(.98); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* Close Button */
+.imp-close{
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 34px; height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(8,26,37,.12);
+  background: #fff;
+  color:#0b223b;
+  font-size: 22px; line-height: 1;
+  display:grid; place-items:center;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.imp-close:hover{ transform: rotate(90deg); box-shadow: 0 8px 18px rgba(7,27,47,.12); }
+
+/* Content */
+.imp-title{
+  margin: 0 0 .25rem;
+  font-size: clamp(22px, 4vw, 28px);
+  letter-spacing: -.02em;
+}
+.imp-lead{ color:#53636f; margin: 0 0 .8rem; }
+
+.imp-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: .6rem 0 1rem;
+}
+@media (min-width: 720px){
+  .imp-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+.imp-block{
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(8,26,37,.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.imp-block h3{
+  margin: 0 0 .35rem;
+  font-size: 1rem;
+  letter-spacing: .01em;
+}
+.imp-block p{ margin: 0; color:#243b53; line-height: 1.55; }
+
+.imp-meta{
+  color:#6b7a86;
+  font-size: .85rem;
+  margin: .2rem 0 .6rem;
+}
+
+/* Primary action */
+.imp-primary{
+  padding: .6rem 1rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  color: #fff; font-weight: 700;
+  box-shadow: 0 12px 26px rgba(14,165,233,.22);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.imp-primary:hover{ transform: translateY(-1px); box-shadow: 0 16px 32px rgba(14,165,233,.28); }

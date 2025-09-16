@@ -10,7 +10,7 @@ import {
 import "../App.css";
 
 export default function Ausbildung() {
-    // Daten – unverändert, aber wir markieren "aktuell"
+
     const timeline = [
         {
             year: "2014 – 2018",
